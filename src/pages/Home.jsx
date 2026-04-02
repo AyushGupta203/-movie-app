@@ -14,7 +14,7 @@ function Home() {
     setLoading(true);
     const controller = new AbortController();
     
-    fetch(`http://www.omdbapi.com/?s=${searchQuery}&apikey=${API_KEY}`, { signal: controller.signal })
+    fetch(`https://www.omdbapi.com/?s=${searchQuery}&apikey=${API_KEY}`, { signal: controller.signal })
       .then(res => res.json())
       .then(data => {
         if (data.Response === 'False') {

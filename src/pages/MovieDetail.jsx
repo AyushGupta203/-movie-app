@@ -10,7 +10,7 @@ function MovieDetail() {
 
   // Fetch movie details when the component mounts or ID changes
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
       .then(res => res.json())
       .then(data => {
         setMovie(data);
