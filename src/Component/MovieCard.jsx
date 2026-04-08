@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../context/WatchlistContext';
 
-function MovieCard({ movie }) {
+ const MovieCard = React.memo(function MovieCard({ movie }) {
   const { addToWatchlist } = useContext(Context);
   const { imdbID, Poster, Title, Year } = movie;
 
@@ -22,8 +22,9 @@ function MovieCard({ movie }) {
         
         <img
           src={posterSrc}
+          loading="eager"
           alt={`${Title} poster`}
-          className="w-full h-75 object-cover"
+          className="w-full h-[400px]  object-cover"
         />
 
         <div className="p-3 flex-grow">
@@ -46,6 +47,6 @@ function MovieCard({ movie }) {
       </div>
     </Link>
   );
-}
+} )
 
 export default MovieCard;

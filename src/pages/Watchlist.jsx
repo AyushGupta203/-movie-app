@@ -17,7 +17,7 @@ function WatchList() {
             <img 
               src={movie.Poster} 
               alt={movie.Title} 
-              className="w-full h-64 object-cover" 
+              className="w-full h-[400px] object-cover" 
             />
             
             <div className="p-3 flex-grow">
