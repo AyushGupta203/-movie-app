@@ -21,9 +21,6 @@ A React-based movie browsing app using OMDB API with optimized performance and m
 - Reduced Largest Contentful Paint (LCP)
 - Improved initial rendering speed
 
-## 📸 Screenshots
-![Home](./screenshots/home.png)
-![Detail](./screenshots/detail.png)
 
 ## 🔗 Live Demo
 https://your-app.vercel.app
