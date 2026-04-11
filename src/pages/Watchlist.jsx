@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from '../context/WatchlistContext';
+import { useWatchlist } from '../context/WatchlistContext';
 
 function WatchList() {
   const { watchlist, removeFromWatchlist } = useContext(Context);
@@ -14,9 +14,10 @@ function WatchList() {
             key={movie.imdbID}
             className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full cursor-pointer"
           >
-            <img 
-              src={movie.Poster} 
-              alt={movie.Title} 
+            <img
+              src={movie.Poster}
+              alt={movie.Title}
+              loading= "eager"
               className="w-full h-[400px] object-cover" 
             />
             

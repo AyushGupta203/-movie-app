@@ -36,6 +36,7 @@ function MovieDetail() {
           
           <div className="md:w-72 flex-shrink-0">
             <img
+            loading="eager"
               src={posterSrc}
               alt={movie.Title}
               className="w-full h-full object-cover"

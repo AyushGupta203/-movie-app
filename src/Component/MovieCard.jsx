@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../context/WatchlistContext';
+import { useWatchlist } from '../context/WatchlistContext';
 
- const MovieCard = React.memo(function MovieCard({ movie }) {
-  const { addToWatchlist } = useContext(Context);
+  const MovieCard = React.memo(function MovieCard({ movie }) {
+const { addToWatchlist } = useWatchlist();
   const { imdbID, Poster, Title, Year } = movie;
 
   // Fallback for missing poster image
@@ -12,8 +12,8 @@ import { Context } from '../context/WatchlistContext';
 
   // Prevent link navigation when adding to watchlist
   const handleAddToWatchlist = (e) => {
-    e.preventDefault(); 
-    addToWatchlist(movie); 
+    e.preventDefault();
+    addToWatchlist(movie);
   };
 
   return (
@@ -22,12 +22,11 @@ import { Context } from '../context/WatchlistContext';
         
         <img
           src={posterSrc}
-          loading="eager"
           alt={`${Title} poster`}
-          className="w-full h-[400px]  object-cover"
+          className="w-full h-[350px]  object-cover"
         />
 
-        <div className="p-3 flex-grow">
+        <div className="p-3 grow">
           <h2 className="text-white font-bold text-sm leading-tight line-clamp-2">
             {Title}
           </h2>
