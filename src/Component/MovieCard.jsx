@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useWatchlist } from '../context/WatchlistContext';
 
-  const MovieCard = React.memo(function MovieCard({ movie }) {
+  const MovieCard = React.memo(function MovieCard({ movie , index}) {
 const { addToWatchlist } = useWatchlist();
   const { imdbID, Poster, Title, Year } = movie;
 
@@ -22,6 +22,7 @@ const { addToWatchlist } = useWatchlist();
         
         <img
           src={posterSrc}
+          loading={index < 6 ? "eager" : "lazy"}
           alt={`${Title} poster`}
           className="w-full h-[350px]  object-cover"
         />

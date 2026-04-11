@@ -81,8 +81,9 @@ function Home() {
       
       {/* Movies Grid */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-7">
-        {movies.map(movie => (
-          <MovieCard key={movie.imdbID} movie={movie} />
+        {movies.map((movie , index )=> (
+          <MovieCard key={movie.imdbID} movie={movie} 
+          index = {index}/>
         ))}
       </div>
 
